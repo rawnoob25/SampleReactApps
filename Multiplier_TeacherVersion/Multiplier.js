@@ -1,14 +1,10 @@
 
 class Multiplier extends React.Component {
-
   constructor(props) {
     super(props);
     this.state = { input1: 0, input2: 0, product: 0 };
     this.multiply = this.multiply.bind(this);
   }
-
-
-
   multiply(id, val) { 
     if (id == 1) {
       this.setState( { input1: val, product: val * this.state.input2 } );
@@ -17,8 +13,6 @@ class Multiplier extends React.Component {
       this.setState( { input2: val, product: this.state.input1 * val } );
     }
   }
-
-
   render() {
     return (
       <div>
@@ -35,17 +29,14 @@ class NumberInputField extends React.Component {
     super(props);
     this.handleChange = this.handleChange.bind(this);
   }
- 
   handleChange(e) {
     this.props.action(this.props.id, e.target.value);
   }
-  
   render() {
     return(
       <input onChange={this.handleChange}></input>
     );
   }
-
 }  
 
 class OutputField extends React.Component {
@@ -55,8 +46,6 @@ class OutputField extends React.Component {
      );
   }
 }  
-
-
 
 ReactDOM.render(<Multiplier/>, document.getElementById('container'));
 
