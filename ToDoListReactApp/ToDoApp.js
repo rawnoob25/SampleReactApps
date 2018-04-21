@@ -61,13 +61,15 @@ class TodoList extends React.Component {
   render() {
     return (
       <ul>
-        {this.props.items.map(function(item) {
+        {this.props.items.map(function(item) { 
+          /*every 'item' is an object; this.props.items is the array of objects passed in as a prop when instantiating
+          a ToDoList instance in class ToDoListApp; every object in the array has the properties 'text' and 'id'.*/
 	  return <TodoItem id={item.id} text={item.text}/>
         })}
       </ul>
     );
   }
-}
+} 
 
 
 
