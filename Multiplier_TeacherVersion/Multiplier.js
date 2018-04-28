@@ -16,9 +16,9 @@ class Multiplier extends React.Component {
   render() {
     return (
       <div>
-      <NumberInputField id="1" action={this.multiply}/>
-      <NumberInputField id="2" action={this.multiply}/>
-      <OutputField product={this.state.product}/>
+        <NumberInputField id="1" action={this.multiply}/>
+        <NumberInputField id="2" action={this.multiply}/>
+        <OutputField product={this.state.product}/>
       </div>
     );
   }
@@ -30,7 +30,9 @@ class NumberInputField extends React.Component {
     this.handleChange = this.handleChange.bind(this);
   }
   handleChange(e) {
-    this.props.action(this.props.id, e.target.value);
+    this.props.action(this.props.id, e.target.value); /*here we have a situation
+    where the containing class (Multiplier) is being delegated to. Specifically,
+    we're delegating to the containing class's multiply method. */
   }
   render() {
     return(
